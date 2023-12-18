@@ -1,1 +1,9 @@
-@import '../../vendor/filament/filament/resources/css/theme.css';
+@import '../../vendor/filament/forms/dist/index.css';
+
+.filament-pill-select .group-hover\/link\:underline {
+    @apply no-underline !important;
+}
+
+.filament-pill-select .fi-ac-link-action {
+    @apply h-full;
+}

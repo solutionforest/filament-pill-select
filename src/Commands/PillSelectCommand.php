@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace SolutionForest\PillSelect\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class PillSelectCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'filament-pill-select';
 
     public $description = 'My command';
 
