@@ -1,9 +1,11 @@
-@import '../../vendor/filament/forms/dist/index.css';
-
 .filament-pill-select .group-hover\/link\:underline {
     @apply no-underline !important;
 }
 
-.filament-pill-select .fi-ac-link-action {
+.filament-pill-select .pill-select-toggle>.fi-ac-link-action {
     @apply h-full;
+}
+
+.filament-pill-select .pill-select-toggle:not(.pill-select-toggle-active)>.fi-ac-link-action>span {
+    @apply text-black;
 }

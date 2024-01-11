@@ -108,13 +108,15 @@
                 <div x-cloak class=""
                     wire:key="{{ $this->getId() }}.{{ $getStatePath() }}.{{ $field::class }}.actions">
                     <span x-show="! areAllCheckboxesChecked" x-on:click="toggleAllCheckboxes()"
-                        class="block h-full border rounded-full py-2 px-4 bg-white"
+                        class="block h-full border rounded-full py-2 px-3 md:px-4 bg-white pill-select pill-select-toggle"
+                        :class="areAllCheckboxesChecked ? 'pill-select-toggle-active' : ''"
                         wire:key="{{ $this->getId() }}.{{ $statePath }}.{{ $field::class }}.actions.select_all">
                         {{ $getAction('selectAll') }}
                     </span>
 
                     <span x-show="areAllCheckboxesChecked" x-on:click="toggleAllCheckboxes()"
-                        class="block h-full border rounded-full py-2 px-4 font-bold border-2 border-primary-500"
+                        class="block h-full border rounded-full py-2 px-3 md:px-4 font-bold border-2 border-primary-500 pill-select pill-select-toggle"
+                        :class="areAllCheckboxesChecked ? 'pill-select-toggle-active' : ''"
                         wire:key="{{ $this->getId() }}.{{ $statePath }}.{{ $field::class }}.actions.deselect_all">
                         {{ $getAction('deselectAll') }}
                     </span>
@@ -134,7 +136,7 @@
                                     .includes(search.toLowerCase())
                         " @endif
                     @class(['break-inside-avoid'])>
-                    <label class="fi-fo-checkbox-list-option-label flex">
+                    <label class="fi-fo-checkbox-list-option-label flex pill-select-container">
                         <x-filament::input.checkbox :error="$errors->has($statePath)" :attributes="\Filament\Support\prepare_inherited_attributes($getExtraInputAttributeBag())
                             ->merge(
                                 [
@@ -149,7 +151,7 @@
                             ->class(['mt-1 w-0 !border-0 !ring-0 shadow-none peer'])" />
 
                         <div
-                            class="grid text-sm leading-6 border rounded-full py-2 px-4 bg-white cursor-pointer peer-checked:font-bold peer-checked:border-2 peer-checked:border-primary-500">
+                            class="grid pill-select text-sm leading-6 border rounded-full py-2 px-3 md:px-4 bg-white cursor-pointer peer-checked:font-bold peer-checked:border-2 peer-checked:border-primary-500">
                             <span class="fi-fo-checkbox-list-option-label font-medium text-gray-950 dark:text-white">
                                 {{ $label }}
                             </span>
