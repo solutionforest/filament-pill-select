@@ -14,59 +14,46 @@ This is where your description should go. Limit it to a paragraph or two. Consid
 You can install the package via composer:
 
 ```bash
-composer require solutionforest/filament-pill-select
+composer require solution-forest/filament-pill-select
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="filament-pill-select-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="filament-pill-select-config"
-```
-
-Optionally, you can publish the views using
+You can publish the views using
 
 ```bash
 php artisan vendor:publish --tag="filament-pill-select-views"
 ```
 
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
 ## Usage
 
 ```php
-$pillSelect = new SolutionForest\PillSelect();
-echo $pillSelect->echoPhrase('Hello, SolutionForest!');
+
+use SolutionForest\PillSelect\PillSelect;
+
+public static function form(Form $form)
+{
+    return $form
+        ->schema([
+            PillSelect::make(),
+        ]);
+}
 ```
 
 ## Testing
-
 ```bash
 composer test
 ```
 
 ## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+See the [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
 ## Contributing
 
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
+See [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 ## Security Vulnerabilities
 
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+If you discover any security related issues, please email info+package@solutionforest.net instead of using the issue tracker.
 
 ## Credits
 
@@ -75,4 +62,18 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+Filament Tree is open-sourced software licensed under the [MIT license](LICENSE.md).
+
+
+<p align="center"><a href="https://solutionforest.com" target="_blank"><img src="https://github.com/solutionforest/.github/blob/main/docs/images/sf.png?raw=true" width="200"></a></p>
+
+
+## About Solution Forest
+
+[Solution Forest](https://solutionforest.com) Web development agency based in Hong Kong. We help customers to solve their problems. We Love Open Soruces. 
+
+We have built a collection of best-in-class products:
+
+- [VantagoAds](https://vantagoads.com): A self manage Ads Server, Simplify Your Advertising Strategy.
+- [GatherPro.events](https://gatherpro.events): A Event Photos management tools, Streamline Your Event Photos.
+- [Website CMS Management](https://filamentphp.com/plugins/solution-forest-cms-website): Website CMS Management
