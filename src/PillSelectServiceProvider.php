@@ -2,9 +2,7 @@
 
 namespace SolutionForest\PillSelect;
 
-use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Css;
-use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Livewire\Features\SupportTesting\Testable;
 use SolutionForest\PillSelect\Testing\TestsPillSelect;
@@ -20,7 +18,7 @@ class PillSelectServiceProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package->name(static::$name)
-        ->hasViews(static::$viewNamespace);
+            ->hasViews(static::$viewNamespace);
     }
 
     public function packageBooted(): void
@@ -34,7 +32,7 @@ class PillSelectServiceProvider extends PackageServiceProvider
         // Testing
         Testable::mixin(new TestsPillSelect());
     }
-    
+
     protected function getAssetPackageName(): ?string
     {
         return 'solution-forest/filament-pill-select';
